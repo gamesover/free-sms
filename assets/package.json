@@ -1,9 +1,8 @@
 {
-  "name": "angular2-quickstart",
+  "name": "free-sms",
   "version": "1.0.0",
   "scripts": {
-    "start": "tsc && concurrently \"npm run tsc:w\" \"npm run lite\" ",
-    "lite": "lite-server",
+    "start": "webpack-dev-server --inline --progress --port 8080",
     "postinstall": "typings install",
     "tsc": "tsc",
     "tsc:w": "tsc -w",
@@ -31,8 +30,12 @@
   },
   "devDependencies": {
     "concurrently": "^2.0.0",
-    "lite-server": "^2.2.0",
+    "jasmine-core": "^2.4.1",
+    "karma": "^1.1.1",
+    "phantomjs-prebuilt": "^2.1.7",
     "typescript": "^1.8.10",
-    "typings":"^1.0.4"
+    "typings": "^1.0.4",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
   }
 }
