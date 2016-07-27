@@ -39,9 +39,14 @@ module.exports = {
                 loader: 'raw'
             },
             {
-                test: /\.scss$/,
-                exclude: /node_modules/,
-                loaders: ['raw-loader', 'sass-loader']
+                test: /\.styl$/,
+                exclude: helpers.root('src', 'app'),
+                loader: ExtractTextPlugin.extract('style', 'css?sourceMap!resolve-url!stylus?sourceMap')
+            },
+            {
+                test: /\.styl$/,
+                include: helpers.root('src', 'app'),
+                loaders: ['exports-loader?module.exports.toString()', 'css', 'stylus']
             }
         ]
     },
