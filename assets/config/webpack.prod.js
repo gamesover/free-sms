@@ -16,7 +16,10 @@ module.exports = webpackMerge(commonConfig, {
         chunkFilename: '[id].[hash].chunk.js'
     },
 
-    htmlLoader: {
+    /*htmlLoader: {
+        minimize: false // workaround for ng2
+    },*/
+    pugLoader: {
         minimize: false // workaround for ng2
     },
 

@@ -12,9 +12,8 @@ module.exports = {
                 loaders: ['ts', 'angular2-template-loader']
             },
             {
-                test: /\.html$/,
-                loader: 'html'
-
+                test: /\.pug$/,
+                loader: 'pug'
             },
             {
                 test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
