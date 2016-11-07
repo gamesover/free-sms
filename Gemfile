@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 ruby '~>2.2.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 4.2'
+gem 'rails', '~> 5.0.0'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
@@ -14,7 +14,7 @@ gem 'ruby-saml', '~> 1.0.0'
 # gem 'redis', '~> 3.0'
 gem 'bcrypt'
 # Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'capistrano-rails', group: :development
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
