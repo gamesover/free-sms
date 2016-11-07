@@ -4,8 +4,9 @@ source 'https://rubygems.org'
 #ruby '~>2.2.5'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0'
+gem 'rails', '~> 4.2.3'
 
+gem 'nokogiri'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 gem 'ruby-saml', '~> 1.0.0'
