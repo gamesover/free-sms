@@ -142,6 +142,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt
   factory_girl_rails
+  nokogiri
   puma (~> 3.0)
   rails (~> 5.0.0)
   rspec-rails
