@@ -5,4 +5,4 @@ rvm:
 # uncomment and edit the following line if your project needs to run something other than `rake`:
 #script: bundle exec rspec spec
 
-bundler_args: --without production
+bundler_args: --without deployment
