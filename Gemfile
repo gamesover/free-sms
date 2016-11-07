@@ -10,6 +10,9 @@ gem 'rails', '~> 5.0.0'
 gem 'puma', '~> 3.0'
 gem 'ruby-saml', '~> 1.0.0'
 
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 gem 'bcrypt'
@@ -20,7 +23,8 @@ gem 'bcrypt'
 # gem 'rack-cors'
 
 group :development, :test do
-  gem 'rspec-rails'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'factory_girl_rails', '~> 4.0'
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
 end
@@ -29,8 +33,10 @@ group :development do
 end
 
 group :test do
-  gem 'factory_girl_rails'
 end
-# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+group :production do
+  gem 'pg'
+end
+
 
