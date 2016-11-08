@@ -141,15 +141,15 @@ PLATFORMS
   x64-mingw32
 
 DEPENDENCIES
-  bcrypt
+  bcrypt (~> 3.1.11)
   factory_girl_rails (~> 4.0)
-  pg
+  pg (~> 0.19)
   puma (~> 3.0)
   rails (~> 5.0.0)
   rspec-rails (~> 3.5)
   ruby-saml (~> 1.0.0)
-  sqlite3
-  tzinfo-data
+  sqlite3 (~> 1.3.12)
+  tzinfo-data (~> 1.2016.9)
 
 RUBY VERSION
    ruby 2.2.5p319
