@@ -11,11 +11,11 @@ gem 'puma', '~> 3.0'
 gem 'ruby-saml', '~> 1.0.0'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', '~> 1.2016.9', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
-gem 'bcrypt'
+gem 'bcrypt', '~> 3.1.11'
 # Use Capistrano for deployment
 #gem 'capistrano-rails', group: :development
 
@@ -26,7 +26,7 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.5'
   gem 'factory_girl_rails', '~> 4.0'
   # Use sqlite3 as the database for Active Record
-  gem 'sqlite3'
+  gem 'sqlite3', '~> 1.3.12'
 end
 
 group :development do
@@ -36,7 +36,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 0.19'
 end
 
 
