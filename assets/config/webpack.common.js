@@ -18,11 +18,15 @@ module.exports = {
         loaders: [
             {
                 test: /\.ts$/,
-                loaders: ['ts', 'angular2-template-loader']
+                loaders: ['awesome-typescript-loader', 'angular2-template-loader']
             },
             {
-                test: /\.pug$/,
-                loader: 'pug'
+                test: /\.(pug|jade)$/,
+                loader: 'pug-html-loader'
+            },
+            {
+                test: /\.html$/,
+                loader: 'html'
             },
             {
                 test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
@@ -40,13 +44,7 @@ module.exports = {
             },
             {
                 test: /\.styl$/,
-                exclude: helpers.root('src', 'app'),
-                loader: ExtractTextPlugin.extract('style', 'css?sourceMap!resolve-url!stylus?sourceMap')
-            },
-            {
-                test: /\.styl$/,
-                include: helpers.root('src', 'app'),
-                loaders: ['exports-loader?module.exports.toString()', 'css', 'stylus']
+                loaders: ['css-to-string', 'css?sourceMap', 'resolve-url', 'stylus']
             }
         ]
     },
@@ -58,6 +56,6 @@ module.exports = {
 
         new HtmlWebpackPlugin({
             template: 'src/index.pug'
-        }),
+        })
     ]
 };
