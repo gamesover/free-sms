@@ -1,0 +1,6 @@
+#search-component
+  h4 Hero Search
+  input#search-box(#searchbox='', (keyup)='search(searchBox.value)')
+  div
+    .search-result(*ngFor='let hero of heroes | async', (click)='gotoDetail(hero)')
+      | {{hero.name}}

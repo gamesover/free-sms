@@ -1,0 +1,15 @@
+h2 My Heroes
+div
+  label Hero name:
+  input(#heroname='')
+  button((click)="add(heroName.value); heroName.value=''")
+    | Add
+ul.heroes
+  li(*ngFor='let hero of heroes', (click)='onSelect(hero)', [class.selected]='hero === selectedHero')
+    span.badge {{hero.id}}
+    span {{hero.name}}
+    button.delete((click)='delete(hero); $event.stopPropagation()') x
+div(*ngIf='selectedHero')
+  h2
+    | {{selectedHero.name | uppercase}} is my hero
+  button((click)='gotoDetail()') View Details
