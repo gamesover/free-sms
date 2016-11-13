@@ -50,6 +50,7 @@
     "karma-webpack": "^1.8.0",
     "node-sass": "^3.8.0",
     "null-loader": "^0.1.1",
+    "open-browser-webpack-plugin": "0.0.3",
     "phantomjs-prebuilt": "^2.1.7",
     "pug": "^2.0.0-beta6",
     "pug-html-loader": "^1.0.9",
