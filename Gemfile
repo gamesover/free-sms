@@ -16,6 +16,7 @@ gem 'tzinfo-data', '~> 1.2016.9', platforms: [:mingw, :mswin, :x64_mingw, :jruby
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 gem 'bcrypt', '~> 3.1.11'
+gem 'oauth2', '~> 1.2.0'
 # Use Capistrano for deployment
 #gem 'capistrano-rails', group: :development
 
