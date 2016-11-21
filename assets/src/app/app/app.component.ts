@@ -1,6 +1,6 @@
 import { Component }          from '@angular/core';
 
-import '../../public/css/styles.styl';
+import '../../../public/css/styles.styl';
 
 @Component({
     selector: 'my-app',
@@ -11,5 +11,5 @@ import '../../public/css/styles.styl';
 })
 
 export class AppComponent {
-    title = 'Tour of Heroes';
+    title = 'Seeding SMS to Australia';
 }

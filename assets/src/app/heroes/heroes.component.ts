@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router';
 
-import { Hero }                from './hero';
-import { HeroService }         from './hero.service';
+import { Hero }                from '../hero/hero';
+import { HeroService }         from '../hero/hero.service';
 
 @Component({
   selector: 'my-heroes',
@@ -20,14 +20,14 @@ export class HeroesComponent implements OnInit {
   getHeroes(): void {
     this.heroService
         .getHeroes()
-        .then(heroes => this.heroes = heroes);
+        .then((heroes: Hero[]) => this.heroes = heroes);
   }
 
   add(name: string): void {
     name = name.trim();
     if (!name) { return; }
     this.heroService.create(name)
-      .then(hero => {
+      .then((hero: Hero) => {
         this.heroes.push(hero);
         this.selectedHero = null;
       });
