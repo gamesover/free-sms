@@ -2,6 +2,10 @@ language: ruby
 rvm:
  - 2.2.5
 
+env:
+ - RAILS_ENV=test
+
 script:
- - rails db:migrate RAILS_ENV=test
+ - bundle exec rails db:schema:load
+ - bundle exec rails db:test:prepare
  - bundle exec rspec spec
