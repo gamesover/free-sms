@@ -9,7 +9,13 @@
     "removeComments": false,
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
+    "baseUrl": "../../../",
+    "typeRoots": [
+      "node_modules/@types",
+      "node_modules"
+    ],
     "types": [
+      "core-js",
       "node"
     ]
   }

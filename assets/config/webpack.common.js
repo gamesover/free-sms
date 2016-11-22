@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var helpers = require('./helpers');
+var LodashModuleReplacementPlugin = require('lodash-webpack-plugin');
 
 module.exports = {
     entry: {
@@ -45,6 +46,27 @@ module.exports = {
             {
                 test: /\.styl$/,
                 loaders: ['css-to-string', 'css?sourceMap', 'resolve-url', 'stylus']
+            },
+            {
+                test: /\.scss$/,
+                loaders: ['style', 'css', 'postcss', 'sass']
+            },
+            {
+                test: /\.(woff2?|ttf|eot|svg)$/,
+                loader: 'url?limit=10000'
+            },
+            {
+                test: /bootstrap\/dist\/js\/umd\//,
+                loader: 'imports?jQuery=jquery'
+            },
+            {
+                loader: 'babel',
+                test: /\.js$/,
+                exclude: /node_modules/,
+                query: {
+                    'plugins': ['lodash'],
+                    'presets': ['es2015']
+                }
             }
         ]
     },
@@ -56,6 +78,13 @@ module.exports = {
 
         new HtmlWebpackPlugin({
             template: 'src/index.pug'
-        })
+        }),
+
+        new webpack.ProvidePlugin({
+            jQuery: 'jquery',
+            $: 'jquery',
+            jquery: 'jquery'
+        }),
+        new LodashModuleReplacementPlugin
     ]
 };
