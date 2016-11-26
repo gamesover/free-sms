@@ -7,7 +7,7 @@ var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 const url = 'http://localhost:8080/';
 
 module.exports = webpackMerge(commonConfig, {
-    devtool: 'cheap-module-eval-source-map',
+    devtool: 'inline-source-map',
 
     output: {
         path: helpers.root('.temp'),

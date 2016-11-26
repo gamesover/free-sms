@@ -3,13 +3,13 @@ import { Component }          from '@angular/core';
 import '../../../public/css/styles.styl';
 
 @Component({
-    selector: 'my-app',
-    templateUrl: './app.component.pug',
+    selector: 'sms-app',
+    templateUrl: 'app.component.pug',
     styleUrls: [
-        './app.component.styl'
+        'app.component.styl'
     ]
 })
 
 export class AppComponent {
-    title = 'Seeding SMS to Australia';
+    title = 'Sending SMS to Australia';
 }
