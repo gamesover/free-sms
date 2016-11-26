@@ -4,7 +4,7 @@ import { Hero }        from '../hero/hero';
 import { HeroService } from '../hero/hero.service';
 
 @Component({
-  selector: 'my-dashboard',
+  selector: 'sms-dashboard',
   templateUrl: 'dashboard.component.pug',
   styleUrls: [ 'dashboard.component.styl' ]
 })
@@ -14,8 +14,8 @@ export class DashboardComponent implements OnInit {
   constructor(private heroService: HeroService) { }
 
   ngOnInit(): void {
-    this.heroService.getHeroes()
-      .then(heroes => this.heroes = heroes.slice(1, 5));
+    /*this.heroService.getHeroes()
+      .then(/!*heroes => this.heroes = heroes.slice(1, 5)*!/);*/
   }
 }
 
