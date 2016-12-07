@@ -6,7 +6,6 @@ env:
  - RAILS_ENV=test
 
 script:
- - bin/rails db:migrate RAILS_ENV=test
- #- bundle exec rails db:test:prepare
-
+ - RAILS_ENV=test bundle exec rake db:migrate --trace
+ - bundle exec rails db:test:prepare
  - bundle exec rspec spec
