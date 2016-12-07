@@ -6,7 +6,7 @@ env:
  - RAILS_ENV=test
 
 script:
- - bundle exec rails db:setup
- #- bundle exec rails db:test:prepare
- #- bundle exec rails db:migrate
+ - bundle exec rails db:migrate
+ - bundle exec rails db:test:prepare
+
  - bundle exec rspec spec
