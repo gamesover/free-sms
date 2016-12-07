@@ -3,17 +3,20 @@ import { Router }            from '@angular/router';
 import { Observable }        from 'rxjs/Observable';
 import { Subject }           from 'rxjs/Subject';
 
-import { HeroSearchService } from '../hero-search/hero-search.service';
-import { Hero } from '../hero/hero';
+//import { HeroSearchService } from '../hero-search/hero-search.service';
+//import { Hero } from '../hero/hero';
 
 @Component({
   selector: 'hero-search',
   templateUrl: 'hero-search.component.pug',
   styleUrls: [ 'hero-search.component.styl' ],
-  providers: [HeroSearchService]
+  //providers: [HeroSearchService]
 })
 export class HeroSearchComponent implements OnInit {
-  heroes: Observable<Hero[]>;
+  ngOnInit(): void {
+
+  }
+  /*heroes: Observable<Hero[]>;
   private searchTerms = new Subject<string>();
 
   constructor(
@@ -44,7 +47,7 @@ export class HeroSearchComponent implements OnInit {
   gotoDetail(hero: Hero): void {
     let link = ['/detail', hero.id];
     this.router.navigate(link);
-  }
+  }*/
 }
 
 
