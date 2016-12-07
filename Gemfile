@@ -17,6 +17,7 @@ gem 'tzinfo-data', '~> 1.2016.9', platforms: [:mingw, :mswin, :x64_mingw, :jruby
 # gem 'redis', '~> 3.0'
 gem 'bcrypt', '~> 3.1.11'
 gem 'oauth2', '~> 1.2.0'
+gem 'rest-client'
 # Use Capistrano for deployment
 #gem 'capistrano-rails', group: :development
 

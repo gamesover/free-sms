@@ -1,0 +1,14 @@
+.container
+    h1 Send SMS
+    form([formGroup]='myForm', novalidate, (ngSubmit)='send(myForm.value, myForm.valid)')
+      .sms-form-control
+        label To
+        input(type='text', formControlName='to', placeholder='0488888888')
+        small([hidden]='myForm.controls.to.valid || (myForm.controls.to.pristine && !submitted)')
+              | Mobile Number is required (10 digits).
+      .sms-form-control
+        label Message
+        textarea.message-content(formControlName='message', rows='5', placeholder='Please input your message')
+        small([hidden]='myForm.controls.message.valid || (myForm.controls.message.pristine && !submitted)')
+                | Message is required.
+      button.btn.btn-primary(type='submit') Send
