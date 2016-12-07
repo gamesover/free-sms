@@ -1,4 +1,5 @@
-workers Integer(ENV['WEB_CONCURRENCY'] || 2)
+# http://stackoverflow.com/questions/20801734/error-while-starting-puma-server-with-workers
+# workers Integer(ENV['WEB_CONCURRENCY'] || 2)
 threads_count = Integer(ENV['RAILS_MAX_THREADS'] || 5)
 threads threads_count, threads_count
 

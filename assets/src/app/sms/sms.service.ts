@@ -3,17 +3,28 @@ import { Headers, Http } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
-import { Hero } from './hero';
+import { SMS } from './sms';
 
 @Injectable()
-export class HeroService {
+export class SMSService {
 
   private headers = new Headers({'Content-Type': 'application/json'});
   private heroesUrl = 'app/heroes';  // URL to web api
 
   constructor(private http: Http) { }
 
-  getHeroes(): Promise<Hero[]> {
+
+  send(sms: SMS): Promise<void> {
+    const url = `api/sms/send_sms`;
+
+    return this.http
+    .post(url, JSON.stringify({to: sms.to, message: sms.message}), {headers: this.headers})
+    .toPromise()
+    .then(res => res.json().data)
+    .catch(this.handleError);
+  }
+
+ /* getHeroes(): Promise<Hero[]> {
     return this.http.get(this.heroesUrl)
                .toPromise()
                .then(response => response.json().data as Hero[])
@@ -41,6 +52,7 @@ export class HeroService {
       .catch(this.handleError);
   }
 
+
   update(hero: Hero): Promise<Hero> {
     const url = `${this.heroesUrl}/${hero.id}`;
     return this.http
@@ -48,7 +60,7 @@ export class HeroService {
       .toPromise()
       .then(() => hero)
       .catch(this.handleError);
-  }
+  }*/
 
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only

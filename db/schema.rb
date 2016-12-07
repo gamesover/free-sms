@@ -10,14 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161114125817) do
+ActiveRecord::Schema.define(version: 20161204053718) do
+
+  create_table "messages", force: :cascade do |t|
+    t.string   "message_id"
+    t.string   "from"
+    t.string   "to",         null: false
+    t.string   "content",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "tokens", force: :cascade do |t|
-    t.string   "token"
-    t.datetime "expired_time"
-    t.datetime "timestamp with time zone"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "token",        null: false
+    t.datetime "expired_time", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "users", force: :cascade do |t|
