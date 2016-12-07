@@ -2,7 +2,7 @@ import './rxjs-extensions';
 
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -13,27 +13,28 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent }         from './app/app.component';
 import { DashboardComponent }   from './dashboard/dashboard.component';
-import { HeroesComponent }      from './heroes/heroes.component';
+//import { HeroesComponent }      from './heroes/heroes.component';
 import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
-import { HeroService }          from './hero/hero.service';
-import { HeroSearchComponent }  from './hero-search/hero-search.component';
+//import { HeroService }          from './hero/hero.service';
+//import { HeroSearchComponent }  from './hero-search/hero-search.component';
+import { SendSMSComponent }  from './send-sms/send-sms.component';
+
+import { SMSService }  from './sms/sms.service';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    //InMemoryWebApiModule.forRoot(InMemoryDataService),
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   declarations: [
     AppComponent,
     DashboardComponent,
-    HeroDetailComponent,
-    HeroesComponent,
-    HeroSearchComponent
+    SendSMSComponent
   ],
-  providers: [ HeroService ],
+  providers: [ SMSService ],
   bootstrap: [ AppComponent ]
 })
 export class AppModule { }
