@@ -1,14 +1,17 @@
 .container
     h1 Send SMS
-    form([formGroup]='myForm', novalidate, (ngSubmit)='send(myForm.value, myForm.valid)')
-      .sms-form-control
+    form([formGroup]='sendSMSForm', novalidate='', (ngSubmit)='send(sendSMSForm.value, sendSMSForm.valid)')
+      .form-group
         label To
-        input(type='text', formControlName='to', placeholder='0488888888')
-        small([hidden]='myForm.controls.to.valid || (myForm.controls.to.pristine && !submitted)')
+        input.form-control(type='text', formControlName='to', placeholder='0488888888')
+        small.text-danger([hidden]='sendSMSForm.controls.to.valid || (sendSMSForm.controls.to.pristine && !submitted)')
               | Mobile Number is required (10 digits).
-      .sms-form-control
+        small.text-danger([hidden]="sendSMSForm.controls['to'].hasError('required') && sendSMSForm.controls.to.touched") Mobile Number is required.
+        small.text-danger([hidden]="sendSMSForm.controls.to.hasError('pattern') && sendSMSForm.controls.to.touched") Mobile Number must start from '042' with length 10.
+
+      .form-group
         label Message
-        textarea.message-content(formControlName='message', rows='5', placeholder='Please input your message')
-        small([hidden]='myForm.controls.message.valid || (myForm.controls.message.pristine && !submitted)')
+        textarea.form-control.message-content(formControlName='message', rows='5', placeholder='Please input your message')
+        small.text-danger([hidden]='sendSMSForm.controls.message.valid || (sendSMSForm.controls.message.pristine && !submitted)')
                 | Message is required.
       button.btn.btn-primary(type='submit') Send
