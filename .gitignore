@@ -19,5 +19,4 @@
 # Ignore production files
 /assets/dist
 .idea
-Gemfile.lock
 /config/secrets.yml
