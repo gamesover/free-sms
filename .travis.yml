@@ -12,6 +12,9 @@ git:
 env:
   SECRET_KEY_BASE="$(bundle exec rake secret)"
 
+before_script:
+  - psql -c 'create database free_sms_test;' -U postgres
+
 script:
  - bundle exec rubocop
  - bundle exec rspec
