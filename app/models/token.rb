@@ -1,16 +1,16 @@
 class Token < ApplicationRecord
-  require 'rest-client'
+  # require 'rest-client'
 
   CONSUMER_KEY = Rails.application.secrets.telstra_sms_consumer_key
   CONSUMER_SECRET = Rails.application.secrets.telstra_sms_consumer_secret
-  CONTENT_TYPE = 'application/x-www-form-urlencoded'
-  TELSTRA_GET_TOKEN_URL = 'https://api.telstra.com/v1/oauth/token'
+  CONTENT_TYPE = 'application/x-www-form-urlencoded'.freeze
+  TELSTRA_GET_TOKEN_URL = 'https://api.telstra.com/v1/oauth/token'.freeze
   OPTIONS = {
-      client_id: CONSUMER_KEY,
-      client_secret: CONSUMER_SECRET,
-      grant_type: 'client_credentials',
-      scope: 'SMS'
-  }
+    client_id: CONSUMER_KEY,
+    client_secret: CONSUMER_SECRET,
+    grant_type: 'client_credentials',
+    scope: 'SMS'
+  }.freeze
 
   def get_token
     latest_token = Token.last
@@ -25,7 +25,7 @@ class Token < ApplicationRecord
   private
 
   def get_token_from_telstra
-    response = RestClient.post TELSTRA_GET_TOKEN_URL, OPTIONS, { content_type: CONTENT_TYPE }
+    response = RestClient.post TELSTRA_GET_TOKEN_URL, OPTIONS, content_type: CONTENT_TYPE
 
     response_hash = JSON.parse(response.body)
     token = response_hash['access_token']

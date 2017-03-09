@@ -1,44 +1,35 @@
 source 'https://rubygems.org'
 
-# ruby 2.3 has some bug to build gem
-ruby '~>2.2.5'
+ruby '2.3.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0'
+gem 'rails', '5.0.2'
 
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
-gem 'ruby-saml', '~> 1.0.0'
+
+gem 'rubocop', '~> 0.47.1', require: false
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', '~> 1.2016.9', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 3.0'
-gem 'bcrypt', '~> 3.1.11'
-gem 'oauth2', '~> 1.2.0'
-gem 'rest-client'
-# Use Capistrano for deployment
-#gem 'capistrano-rails', group: :development
-
-# Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-# gem 'rack-cors'
+gem 'devise_token_auth', '~> 0.1.40'
+gem 'omniauth'
+gem 'pg', '~> 0.19'
 
 group :development, :test do
-  gem 'rspec-rails', '~> 3.5'
   gem 'factory_girl_rails', '~> 4.0'
-  # Use sqlite3 as the database for Active Record
-  gem 'sqlite3', '~> 1.3.12'
+  gem 'faker', '~> 1.7.3'
+  gem 'rspec-rails', '~> 3.5'
 end
 
 group :development do
+  gem 'mailcatcher'
+  gem 'spring'
 end
 
 group :test do
 end
 
 group :production do
-  gem 'pg', '~> 0.19'
 end
-
-

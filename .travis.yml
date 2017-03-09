@@ -1,7 +1,19 @@
 language: ruby
+
 rvm:
- - 2.2.5
+ - 2.3.3
+
+addons:
+  postgresql: '9.4'
+
+git:
+  submodules: false
+
+env:
+  SECRET_KEY_BASE="$(bundle exec rake secret)"
 
 script:
- - RAILS_ENV=test bundle exec rails db:migrate --trace
- - bundle exec rspec spec
+ - bundle exec rubocop
+ - bundle exec rake db:create RAILS_ENV=test
+ - bundle exec rake db:migrate RAILS_ENV=test
+ - bundle exec rspec
