@@ -11,7 +11,7 @@ git:
 
 env:
   SECRET_KEY_BASE="$(bundle exec rake secret)"
-  
+
 script:
  - bundle exec rubocop
  - bundle exec rspec
