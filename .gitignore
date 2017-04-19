@@ -17,6 +17,9 @@
 /tmp
 
 # Ignore production files
-/assets/dist
-.idea
+
+\.idea/
 /config/secrets.yml
+/config/database.yml
+/client/node_modules/
+/client/dist/

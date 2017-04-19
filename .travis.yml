@@ -1,19 +1,28 @@
-language: ruby
+language: node_js
 
-rvm:
- - 2.3.3
+node_js:
+  - 6.10.0
+
+env:
+  - RAILS_ENV=test
 
 addons:
   postgresql: '9.4'
 
-git:
-  submodules: false
+before_install:
+  - rvm install 2.3.3
 
-env:
-  SECRET_KEY_BASE="$(bundle exec rake secret)"
+install:
+  - gem install bundler
+  - bundle
+  - cd client && npm install && cd ..
+
+before_script:
+  - cp config/database.yml.travis config/database.yml
 
 script:
  - bundle exec rubocop
- - bundle exec rake db:create RAILS_ENV=test
- - bundle exec rake db:migrate RAILS_ENV=test
+ - bundle exec rake db:create
+ - bundle exec rake db:schema:load
  - bundle exec rspec
+ - cd client && npm run test
