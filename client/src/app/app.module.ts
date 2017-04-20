@@ -4,14 +4,14 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { Router } from '@angular/router';
 
-import { AppComponent }            from './app.component';
+import { AppComponent }            from './app/app.component';
 import { AppRoutingModule }        from './app-routing.module';
 
-import { HeroesModule }            from './heroes/heroes.module';
-import { ComposeMessageComponent } from './compose-message.component';
+//import { HeroesModule }            from './heroes/heroes.module';
+import { ComposeMessageComponent } from './compose-message/compose-message.component';
 import { LoginRoutingModule }      from './login-routing.module';
-import { LoginComponent }          from './login.component';
-import { PageNotFoundComponent }   from './not-found.component';
+import { LoginComponent }          from './login/login.component';
+import { PageNotFoundComponent }   from './not-found/not-found.component';
 
 import { DialogService }           from './dialog.service';
 
@@ -19,7 +19,7 @@ import { DialogService }           from './dialog.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HeroesModule,
+    //HeroesModule,
     LoginRoutingModule,
     AppRoutingModule
   ],
